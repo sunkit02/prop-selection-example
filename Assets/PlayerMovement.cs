@@ -125,6 +125,9 @@ public class PlayerMovement : MonoBehaviour
                     Destroy(playerTransform.gameObject);
 
                     playerTransform = newProp.transform;
+                    transform.parent = newProp.transform;
+
+                    transform.GetComponent<PlayerMovement>().enabled = true;
 
                     currentCoolDown = COOL_DOWN;
                 }
